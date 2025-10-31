@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+
+# knife4j的增强配置，不需要增强可以不配(建议配置一下)
+knife4j:
+  enable: true    #开启knife4j,无需添加@EnableKnife4j注解
+  setting:
+    language: zh_cn   #中文
+    swagger-model-name: 实体类列表   #重命名SwaggerModel名称,默认
+
+swagger3:
+  name: wsj团队
+  email: whiskeyaka9@gmail.com
+  title:
+  description:
+  version: 1.0
+  termsOfServiceUrl: https://www.baidu.com
+
+
+
+spring:
+  application:
+    name: consumer-order
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+
+
+
+
+

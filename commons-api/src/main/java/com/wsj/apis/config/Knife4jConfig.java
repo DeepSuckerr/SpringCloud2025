@@ -1,10 +1,11 @@
-package com.wsj.config;
+package com.wsj.apis.config;
 
-import com.wsj.commons.Swagger3Properties;
+import com.wsj.apis.commons.Swagger3Properties;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -33,6 +34,42 @@ public class Knife4jConfig {
                 );
 
     }
+
+    /**
+     * 订单模块的API分组
+     */
+//    @Bean
+//    public GroupedOpenApi orderApi() { // 创建了一个api接口的分组
+//        return GroupedOpenApi.builder()
+//                .group("订单模块") // 分组名称
+//                .pathsToMatch("/order/**") // 接口请求路径规则
+//                .build();
+//    }
+
+    @Bean
+    public GroupedOpenApi consumerApi() {
+        return GroupedOpenApi.builder()
+                .group("消费者模块") // 分组名称
+                .pathsToMatch("/consumer/**") // 匹配 consumer 服务的接口
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi providerConsulApi() {
+        return GroupedOpenApi.builder()
+                .group("消费者端获取Consul数据") // 分组名称
+                .pathsToMatch("/Consul/**") // 匹配 consumer 服务的接口
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi OrderApi() {
+        return GroupedOpenApi.builder()
+                .group("订单模块") // 分组名称
+                .pathsToMatch("/Order/**") // 匹配 consumer 服务的接口
+                .build();
+    }
+
 
 
 }

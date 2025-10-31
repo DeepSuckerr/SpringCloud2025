@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsj.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.wsj.apis.pojo.Order">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="order_name" property="orderName" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="VARCHAR"/>
+        <result column="order_num" property="orderNum" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <insert id="addOrder" parameterType="com.wsj.apis.pojo.Order" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_order (order_name, price, order_num, create_time, modify_time, user_id)
+        values (#{orderName}, #{price}, #{orderNum}, #{createTime}, #{modifyTime}, #{userId})
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.wsj.apis.pojo.Order">
+        update tb_order
+        <set>
+            <if test="orderName != null">
+                order_name = #{orderName},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="orderNum != null">
+                order_num = #{orderNum},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from tb_order where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from tb_order
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select * from tb_order where id = #{id}
+    </select>
+
+</mapper>

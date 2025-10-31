@@ -1,4 +1,4 @@
-package com.wsj.DTO;
+package com.wsj.apis.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ public class OrderDTO implements Serializable {
     private Integer id;
     private String orderName;
     private String price;
-    private Integer orderNumber;
+    private Integer orderNum;
     private Date createTime;
     private Date modifyTime;
     private Integer userId;

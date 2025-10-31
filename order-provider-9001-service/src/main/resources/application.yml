@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 9001
 
 
 spring:
@@ -21,7 +21,6 @@ spring:
   jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
-
   profiles:
     active: dev
 

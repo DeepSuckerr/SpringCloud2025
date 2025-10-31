@@ -18,7 +18,7 @@ public class OrderController {
     OrderService orderService;
 
     @PostMapping("/addOrder")
-        @Operation(summary = "新增订单",description = "订单管理")
+    @Operation(summary = "新增订单",description = "订单管理")
     public Result addOrder(@RequestBody OrderDTO orderDTO){
 
         return orderService.addOrderService(orderDTO);
@@ -42,7 +42,7 @@ public class OrderController {
     @GetMapping("/findAll")
     @Operation(summary = "查询所有订单", description = "查询所有订单")
     public Result findAllOrders() {
-        System.out.println("执行了9000的服务");
+        System.out.println("执行了9001的服务");
         return orderService.findAllOrders();
     }
 

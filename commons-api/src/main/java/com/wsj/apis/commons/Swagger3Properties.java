@@ -1,4 +1,4 @@
-package com.wsj.commons;
+package com.wsj.apis.commons;
 
 
 import lombok.AllArgsConstructor;
