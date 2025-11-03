@@ -30,6 +30,11 @@ spring:
         service-name: ${spring.application.name}
 
 
+# 天气服务相关配置
+weather:
+  key: "64f746244884f9be0b0ad09a5a3aa254"
+
+
 
 
 

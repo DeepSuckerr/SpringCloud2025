@@ -15,6 +15,7 @@
         <module>order-consumer-8000-service</module>
         <module>order-provider-9001-service</module>
         <module>commons-api</module>
+        <module>order-openfeign-comsumer-8001</module>
     </modules>
 
     <properties>

@@ -10,3 +10,6 @@ spring:
       config:
         profile-separator: '-'
         format: yaml
+
+  profiles:
+    active: dev

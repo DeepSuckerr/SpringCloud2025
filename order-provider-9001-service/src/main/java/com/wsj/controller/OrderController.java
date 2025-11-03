@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/Order")
+@RequestMapping("/order")
 @Tag(name = "订单管理")
 public class OrderController {
 

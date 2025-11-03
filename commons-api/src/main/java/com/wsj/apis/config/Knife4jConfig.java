@@ -58,7 +58,7 @@ public class Knife4jConfig {
     public GroupedOpenApi providerConsulApi() {
         return GroupedOpenApi.builder()
                 .group("消费者端获取Consul数据") // 分组名称
-                .pathsToMatch("/Consul/**") // 匹配 consumer 服务的接口
+                .pathsToMatch("/consul/**") // 匹配 consumer 服务的接口
                 .build();
     }
 
@@ -69,6 +69,23 @@ public class Knife4jConfig {
                 .pathsToMatch("/Order/**") // 匹配 consumer 服务的接口
                 .build();
     }
+
+    @Bean
+    public GroupedOpenApi WeatherApi() {
+        return GroupedOpenApi.builder()
+                .group("获取天气信息") // 分组名称
+                .pathsToMatch("/getWeatherInfo/**") // 匹配 consumer 服务的接口
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi openFeignApi() {
+        return GroupedOpenApi.builder()
+                .group("openFeign消费者") // 分组名称
+                .pathsToMatch("/openFeign/**") // 匹配 consumer 服务的接口
+                .build();
+    }
+
 
 
 

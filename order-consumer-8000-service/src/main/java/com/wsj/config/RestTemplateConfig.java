@@ -1,9 +1,10 @@
-package com.wsj.apis.config;
+package com.wsj.config;
 
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -18,7 +19,13 @@ public class RestTemplateConfig {
      */
     @Bean
     @LoadBalanced
+    @Primary //多个同类型Bean时，指定首选项
     public RestTemplate getRestTemplateBean() {
+        return new RestTemplate();
+    }
+
+    @Bean(name = "externalRestTemplate")
+    public RestTemplate getExternalRestTemplateBean() {
         return new RestTemplate();
     }
 

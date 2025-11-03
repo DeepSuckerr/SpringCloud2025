@@ -1,16 +1,21 @@
+server:
+  port: 8081
 spring:
   application:
-    name: provider-order # 服务名称
+    name: openfeign-consumer
   cloud:
     consul:
       host: localhost
       port: 8500
       discovery:
         service-name: ${spring.application.name}
-      config:
-        profile-separator: '-'
-        format: yaml
 
-  profiles:
-    active: dev
+
+
+
+
+
+
+
+
 
