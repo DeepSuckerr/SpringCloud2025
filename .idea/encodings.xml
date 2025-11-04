@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/commons-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-consumer-8000-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-consumer-8000-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-gateway-9527/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-gateway-9527/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-openfeign-comsumer-8001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-openfeign-comsumer-8001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-provider-9000-service/src/main/java" charset="UTF-8" />

@@ -3,7 +3,7 @@ package com.wsj.controller;
 
 import com.wsj.apis.DTO.OrderDTO;
 import com.wsj.apis.commons.Result;
-import com.wsj.openFeign.OrderOpenFeignAPI;
+import com.wsj.apis.openFeign.OrderOpenFeignAPI;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

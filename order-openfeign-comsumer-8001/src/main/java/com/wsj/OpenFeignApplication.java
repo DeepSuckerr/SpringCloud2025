@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.wsj.openFeign")
+@EnableFeignClients(basePackages ="com.wsj.apis.openFeign")
 public class OpenFeignApplication
 {
     public static void main( String[] args )

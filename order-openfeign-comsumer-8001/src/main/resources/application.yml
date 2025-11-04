@@ -10,8 +10,48 @@ spring:
       discovery:
         service-name: ${spring.application.name}
 
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 5000
+            read-timeout: 5000
+      circuitbreaker:
+        enabled: true
+        group:
+          enabled: true
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        failure-rate-threshold: 50
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 6
+        # 熔断器最小尝试次数
+        # 到达minimum-number次请求后才开始计算故障率
+        minimum-number-of-calls: 6
+        # 半开与全开的自动转换
+        automatic-transition-from-open-to-half-open-enabled: true
+        # 全开到半开的等待时间
+        wait-duration-in-open-state: 5s
+        # 允许半开调用数
+        permitted-number-of-calls-in-half-open-state: 2
+        # 报错类型
+        record-exceptions:
+          - java.lang.Exception
+          # 实例配置
+      instances:
+        base-config: default
 
 
+
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0 #采样率默认为0.1(0.1就是10次只能有一次被记录下来)，值越大收集越及时。
 
 
 
