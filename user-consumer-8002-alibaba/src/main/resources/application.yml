@@ -1,0 +1,12 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: nacos-user-consumer
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: localhost:8848
+
+server-url: http://nacos-user-provider

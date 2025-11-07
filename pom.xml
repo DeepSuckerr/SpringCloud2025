@@ -17,6 +17,13 @@
         <module>commons-api</module>
         <module>order-openfeign-comsumer-8001</module>
         <module>order-gateway-9527</module>
+        <module>user-provider-9002-alibaba</module>
+        <module>user-consumer-8002-alibaba</module>
+        <module>user-provider-9003-alibaba</module>
+        <module>nacos-config-9005-alibaba</module>
+        <module>sentinel-service-8041</module>
+        <module>music-provider-9004</module>
+        <module>music-provider-9004</module>
     </modules>
 
     <properties>

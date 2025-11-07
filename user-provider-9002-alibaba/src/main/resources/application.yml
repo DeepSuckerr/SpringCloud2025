@@ -1,0 +1,31 @@
+server:
+  port: 9002
+spring:
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+  application:
+    name: nacos-user-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        service: ${spring.application.name}
+
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/2022_springcloud?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wsj.apis.pojo
+  configuration:
+    map-underscore-to-camel-case: true

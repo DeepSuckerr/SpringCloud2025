@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wsj.mapper.UserMapper">
+
+
+    <insert id="registerUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+
+        insert into tb_user (user_name, password, tel, image, create_time, modify_time) values (#{userName}, #{password}, #{tel}, #{image}, #{createTime}, #{modifyTime})
+
+
+    </insert>
+    <select id="findUserByUsernameAndPassword" resultType="com.wsj.apis.pojo.User">
+
+        select * from tb_user where user_name = #{userName} and password = #{password}
+
+    </select>
+
+    <select id="login" resultType="com.wsj.apis.pojo.User">
+        select * from tb_user where user_name = #{userName} and password = #{password}
+    </select>
+
+</mapper>
